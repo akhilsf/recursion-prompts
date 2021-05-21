@@ -35,18 +35,17 @@ var arraySum = function(array) {
     return 0;
   }
 
-  var firstElem = array[0];
-  var accumulator = array[0];
+  var sum = 0;
 
-  while (Array.isArray(firstElem)) {
-    firstElem = firstElem[0];
-    accumulator = 0;
-    for (var i = 0; i < firstElem.length; i++) {
-      accumulator += firstElem[i];
+  for (var i = 0; i < array.length; i++) {
+    if (!Array.isArray(array[i])) {
+      sum += array[i];
+    } else {
+      sum += arraySum(array[i]);
     }
   }
 
-  return accumulator + arraySum(array.slice(1));
+  return sum;
 
 };
 
