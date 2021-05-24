@@ -348,7 +348,6 @@ var replaceKeysInObj = function(obj, oldKey, newKey) {
       obj[newKey] = tempVal;
     }
   }
-
   return obj;
 };
 
